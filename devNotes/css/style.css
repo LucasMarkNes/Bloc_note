@@ -8,13 +8,11 @@
 body{
     background-color: rgb(34, 34, 34);
 }
-
 /*Cabecalho*/
-
 header{
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #5e5e5e;
     padding: 1rem 2rem;
-    color: #fff;
+    color: #555555;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -24,7 +22,6 @@ header{
     align-items: center;
     gap: 1rem;
 }
-
 #search-input{
     background-color: #333333;
     border-radius: 5px;
@@ -34,12 +31,9 @@ header{
     color: #ddd;
     width: 400px;
 }
-
-
 #search-input::placeholder{
     color: #ddd;
 }
-
 #export-notes{
     background-color: #333;
     border: 2px solid #fff;
@@ -52,7 +46,6 @@ header{
     background-color: #fff;
     color: #333;
 }
-
 /*Form da nota nota*/
 #add-note-container{
     display: flex;
@@ -60,18 +53,73 @@ header{
     margin: 1rem auto 0;
     gap: 1rem;
 }
-
 #add-note-container input,
 #add-note-container button{
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #525300;
-    color: #fff;
-
+    border: 1px solid #000000;
+    color: #000000;
 }
-
 #add-note-container input{
       color: pointer;
       background-color: #333;
-      color: #FFF;
+      color: #ffffff;
+}
+/*Notas */
+#notes-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    padding: 2rem;
+    gap: 2rem   ;
+}
+.note{
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #FFF;
+    position: relative;
+}
+.note textarea{
+    background-color: transparent;
+    resize: none;
+    color: #FFF;
+    border: none;
+    height: 100%;
+    outline:none;
+}
+.note  .bi-pin{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 1.2rem;
+    background-color: #333;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+}
+.note:hover > i{
+    opacity: 1;
+}   
+.note .bi-x-lg,
+.note .bi-file-earmark-plus{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.9rem;
+    padding: 5px;
+    transition: 0.3s;
+    color: #555;
+    cursor: pointer;
+    opacity: 0;
+}
+.note  .bi-file-earmark-plus{
+    top: 40px;
+}
+ .note .bi-x-lg:hover,
+ .note .bi-file-earmark-plus:hover{
+    color: #FFF;
+ }
+.note.fixed{
+    background-color: #696969;
 }
