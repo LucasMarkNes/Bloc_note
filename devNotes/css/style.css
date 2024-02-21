@@ -138,9 +138,16 @@ header{
 
     #search-input{
         width:100%;
+        
     }
 
     #add-note-container{
-        width: 100%;6
+        width: 100%;
+        padding:02rem;
+
+    }
+
+    #notes-container{
+        grid-template-columns: repeat(auto-fill, );
     }
 }
