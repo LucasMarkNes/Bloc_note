@@ -12,9 +12,9 @@ const searchInput = document.querySelector("#search-input");
 
 const exportBtn = document.querySelector("#export-notes"); 
 //Funções 
+
 function showNotes(){
     cleanNotes();
-
     getNotes().forEach((note)=> {
         const noteElement = createNote(note.id, note.content, note.fixed);
         
@@ -27,9 +27,7 @@ function cleanNotes(){
 }
 
 function addNote(){
-
     const notes = getNotes();
-
     const noteObject = {
         id: generateId(),
         content: noteInput.value,
@@ -37,12 +35,9 @@ function addNote(){
     };
 
     const noteElement = createNote(noteObject.id, noteObject.content);
-
     notesContainer.appendChild(noteElement);
-
     notes.push(noteObject);
     saveNotes(notes);
-
     noteInput.value = "";
 }
 
@@ -119,19 +114,14 @@ function createNote(id, content, fixed){
 function ToggleFixNote(id){
     const notes = getNotes()
     const targetNote = notes.filter((note) => note.id === id)[0]
-
     targetNote.fixed = !targetNote.fixed;
-
     saveNotes(notes);
-
     showNotes();
 }
 
 function deleteNote(id, element){
     const notes = getNotes().filter((note) => note.id !== id);
-
     saveNotes(notes);
-
     notesContainer.removeChild(element);
 }
 
@@ -148,9 +138,7 @@ function copyNote(id){
     };
 
     const noteElement = createNote(noteObject.id, noteObject.content, noteObject.fixed);
-
     notesContainer.appendChild(noteElement);
-
     notes.push(noteObject);
     saveNotes(notes);
 
@@ -167,9 +155,7 @@ function updateNote(){
 }
 function updateNote(id, newContent){
     const notes = getNotes();
-
     const targetNote = notes.filter((note) => note.id === id)[0];
-
     targetNote.content = newContent;
 
     saveNotes(notes);
@@ -202,7 +188,6 @@ function searchNotes (search){
         }
 
         cleanNotes();
-
         showNotes();
 }
 
